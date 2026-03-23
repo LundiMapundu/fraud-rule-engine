@@ -4,14 +4,15 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: eu-west-1
-  ECR_REPOSITORY: fraud-engine
-  ECS_CLUSTER: fraud-engine-cluster
-  ECS_SERVICE: fraud-engine-service
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  ECR_REPOSITORY: ${{ vars.ECR_REPOSITORY }}
+  ECS_CLUSTER: ${{ vars.ECS_CLUSTER }}
+  ECS_SERVICE: ${{ vars.ECS_SERVICE }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     permissions:
       id-token: write
       contents: read
