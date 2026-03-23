@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: af-south-1
-  ECR_REPOSITORY: fraud-rule-engine
+  AWS_REGION: eu-west-1
+  ECR_REPOSITORY: fraud-engine
   ECS_CLUSTER: fraud-engine-cluster
   ECS_SERVICE: fraud-engine-service
 
