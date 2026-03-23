@@ -1,0 +1,14 @@
+# Override for AWS deployment — app connects to real AWS resources
+# Usage: docker compose -f docker-compose.yml -f docker-compose.aws.yml up app
+services:
+  app:
+    env_file: .env.aws
+    depends_on: []
+
+  # Disable local services when using AWS
+  postgres:
+    profiles: ["local-only"]
+  redis:
+    profiles: ["local-only"]
+  localstack:
+    profiles: ["local-only"]
